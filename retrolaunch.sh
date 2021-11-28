@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # path to RA cores on macOS
-cpath=/Users/marc/Library/Application\ Support/RetroArch/cores/
+cpath=$HOME/Library/Application\ Support/RetroArch/cores/
 
 # core names
 nes=fceumm_libretro.dylib
