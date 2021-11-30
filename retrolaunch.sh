@@ -9,7 +9,8 @@ gbc=gambatte_libretro.dylib
 gba=mgba_libretro.dylib
 snes=snes9x_libretro.dylib
 a26=stella_libretro.dylib
-smd=genesis_plus_gx_libretro.dylib 
+smd=genesis_plus_gx_libretro.dylib
+nds=desmume_libretro.dylib
 
 for rom in "$@"
 do
@@ -23,6 +24,7 @@ do
 		smc|sfc)        core=$snes ;;
 		a26|bin)        core=$a26 ;;
 		sms|md|smd|gg)  core=$smd ;;
+		nds)            core=$nds ;;
 	esac
 
 done
