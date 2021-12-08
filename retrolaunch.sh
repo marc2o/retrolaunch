@@ -26,7 +26,8 @@ do
 		a26|bin)        core=$a26 ;;
 		sms|md|smd|gg)  core=$smd ;;
 		nds)            core=$nds ;;
-		d64|t64|prg)    core=$c64 ;;
+		#d64|t64|prg)    core=$c64 ;;
+		*)              core="not yet supported"
 	esac
 
 done
@@ -35,6 +36,11 @@ done
 temphasis=$(tput bold; tput setaf 13)
 tregular=$(tput sgr0)
 
-echo "RetroArch: launching $temphasis$romname$tregular rom..."
+if [[ "$core" == "not yet supported" ]] then
+  echo "Core not yet supportet"
+else
+  echo "RetroArch: launching $temphasis$romname$tregular rom..."
+  open -a RetroArch --args -L "$cpath$core" "$rom"
+fi
 
-open -a RetroArch --args -L "$cpath$core" "$rom"
+
